@@ -3,8 +3,10 @@ package Polynome;
 public class PolynomTabulator {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Polynom poly = new Polynom("1,2,3");
+		System.out.println(poly.toString());
+		
 	}
 
 }
