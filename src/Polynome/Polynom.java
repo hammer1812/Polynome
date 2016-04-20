@@ -1,16 +1,14 @@
 package Polynome;
 
-import java.util.ArrayList;
-
 public class Polynom {
 
 	private double[] polynom;
 	
 	public Polynom(String argumente){
-		String[] coeffs = argumente.split(",");
+		String[] coeffs = argumente.split(";");
 		polynom = new double[coeffs.length];
 		for(int i=0; i<coeffs.length; i++){
-			polynom[i] = Double.parseDouble(coeffs[i]);
+			polynom[i] = Double.parseDouble(coeffs[i]); //wirft exception wenn Kommazahl mit "," statt "." geschrieben wird kektoni
 		}
 	}
 	
