@@ -12,6 +12,14 @@ public class Polynom {
 		}
 	}
 	
+	public double get(int index){
+		return polynom[index];
+	}
+	
+	public int size(){
+		return polynom.length;
+	}
+	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<polynom.length;i++){
