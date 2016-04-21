@@ -12,6 +12,7 @@ public class PolynomTabulator {
 		//funktionswerte für wertebereich berechnen
 		table = new ArrayList<String>();
 		
+		//Bug: berechnet in der Schleife merkwürdige Kommazahlen, bzw sind die nicht auch eine stelle gerundet FeelsBadMan
 		for(double i = hn.getWertebereich1(); i<=hn.getWertebereich2(); i += hn.getSchrittweite()){
 			StringBuilder sb = new StringBuilder();
 			sb.append("\t");
