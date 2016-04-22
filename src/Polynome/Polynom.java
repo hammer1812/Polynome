@@ -3,6 +3,8 @@ package Polynome;
 public class Polynom {
 
 	private double[] polynom;
+	private double radikand;
+	private int exponent;
 	
 	public Polynom(String argumente){
 		String[] coeffs = argumente.split(";");
@@ -10,6 +12,19 @@ public class Polynom {
 		for(int i=0; i<coeffs.length; i++){
 			polynom[i] = Double.parseDouble(coeffs[i]); //wirft exception wenn Kommazahl mit "," statt "." geschrieben wird kektoni
 		}
+	}
+	
+	public Polynom(double radikand, int exponent){
+		this.radikand = radikand;
+		this.exponent = exponent;
+	}
+	
+	public double getRadikand(){
+		return radikand;
+	}
+	
+	public int getExponent(){
+		return exponent;
 	}
 	
 	public double get(int index){

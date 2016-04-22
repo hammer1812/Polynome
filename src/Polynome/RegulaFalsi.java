@@ -1,5 +1,5 @@
 package Polynome;
 
-public class RegulaFalsi {
+public class RegulaFalsi extends Iterationsverfahren{
 
 }

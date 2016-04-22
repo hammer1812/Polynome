@@ -1,5 +1,7 @@
 package Polynome;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class PolynomTabulator {
@@ -11,9 +13,10 @@ public class PolynomTabulator {
 		this.hn = hn;
 		//funktionswerte für wertebereich berechnen
 		table = new ArrayList<String>();
-		
+		double ende = Math.abs(hn.getWertebereich1()-hn.getWertebereich2())/hn.getSchrittweite();
 		//Bug: berechnet in der Schleife merkwürdige Kommazahlen, bzw sind die nicht auch eine stelle gerundet FeelsBadMan
-		for(double i = hn.getWertebereich1(); i<=hn.getWertebereich2(); i += hn.getSchrittweite()){
+		for(int n = 0; n <= ende; n++){
+			double i = round(hn.getWertebereich1() + hn.getSchrittweite()*n, 1);
 			StringBuilder sb = new StringBuilder();
 			sb.append("\t");
 			sb.append(i);
@@ -25,9 +28,17 @@ public class PolynomTabulator {
 		}
 		
 	}
+	
+	public static double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    BigDecimal bd = new BigDecimal(value);
+	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    return bd.doubleValue();
+	}
 	//Muster:
 	//    5x^2+3x+1
-	//_______________________________________________________________________
+	// _____________________________________________________________________
 	//|		Argument	|		Polynomwert		|		Ableitungswert		|
 	//|		x			|		xyz				|		XYZ					|
 	//|		x			|		xyz				|		XYZ					|
