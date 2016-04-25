@@ -8,44 +8,27 @@ public class PolynomTabulator {
 	
 	private ArrayList<String> table;
 	private Horner hn;
-
+//testkoeffizienten: 1;2;-5;-10;4;8
 	public PolynomTabulator(Horner hn, double wertebereich1, double wertebereich2, double schrittweite){
 		this.hn = hn;
-		//funktionswerte für wertebereich berechnen
 		table = new ArrayList<String>();
 		double ende = Math.abs(wertebereich1-wertebereich2)/schrittweite;
-		//Bug: berechnet in der Schleife merkwürdige Kommazahlen, bzw sind die nicht auch eine stelle gerundet FeelsBadMan
+		
 		for(int n = 0; n <= ende; n++){
-			double i = round(wertebereich1 + schrittweite*n, 1);
+			BigDecimal bd = new BigDecimal(wertebereich1 + schrittweite*n);
+			bd = bd.setScale(1, RoundingMode.HALF_UP);
 			StringBuilder sb = new StringBuilder();
 			sb.append("\t");
-			sb.append(i);
+			sb.append(bd.doubleValue());
 			sb.append("\t\t");
-			sb.append(hn.getFunktionswert(i));
+			sb.append(hn.getFunktionswert(bd.doubleValue()));
 			sb.append("\t\t");
-			sb.append(hn.getErsteAbleitungwert(i));
+			sb.append(hn.getErsteAbleitungwert(bd.doubleValue()));
 			table.add(sb.toString());
 		}
 		
 	}
-	
-	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
 
-	    BigDecimal bd = new BigDecimal(value);
-	    bd = bd.setScale(places, RoundingMode.HALF_UP);
-	    return bd.doubleValue();
-	}
-	//Muster:
-	//    5x^2+3x+1
-	// _____________________________________________________________________
-	//|		Argument	|		Polynomwert		|		Ableitungswert		|
-	//|		x			|		xyz				|		XYZ					|
-	//|		x			|		xyz				|		XYZ					|
-	//|		x			|		xyz				|		XYZ					|
-	//|		x			|		xyz				|		XYZ					|
-	//|		x			|		xyz				|		XYZ					|
-	//|_________________|_______________________|___________________________|
 	public void format(){
 		System.out.println("Berechnung für das Polynom: " + hn.getStringOfPolynom());
 		System.out.println("\tArgument\t\tPolynomwert\t\tWert der ersten Ableitung");
