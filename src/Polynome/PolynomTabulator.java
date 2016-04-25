@@ -9,14 +9,14 @@ public class PolynomTabulator {
 	private ArrayList<String> table;
 	private Horner hn;
 
-	public PolynomTabulator(Horner hn){
+	public PolynomTabulator(Horner hn, double wertebereich1, double wertebereich2, double schrittweite){
 		this.hn = hn;
 		//funktionswerte für wertebereich berechnen
 		table = new ArrayList<String>();
-		double ende = Math.abs(hn.getWertebereich1()-hn.getWertebereich2())/hn.getSchrittweite();
+		double ende = Math.abs(wertebereich1-wertebereich2)/schrittweite;
 		//Bug: berechnet in der Schleife merkwürdige Kommazahlen, bzw sind die nicht auch eine stelle gerundet FeelsBadMan
 		for(int n = 0; n <= ende; n++){
-			double i = round(hn.getWertebereich1() + hn.getSchrittweite()*n, 1);
+			double i = round(wertebereich1 + schrittweite*n, 1);
 			StringBuilder sb = new StringBuilder();
 			sb.append("\t");
 			sb.append(i);

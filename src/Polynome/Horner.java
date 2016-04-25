@@ -2,28 +2,11 @@ package Polynome;
 
 public class Horner {
 	
-	private double wertebereich1, wertebereich2, schrittweite;
-	private double radikand;
-	private int exponent;
 	private Polynom polynom;
 	
-	public Horner(Polynom polynom, double wertebereich1, double wertebereich2, double schrittweite){
-		this.wertebereich1 = wertebereich1;
-		this.wertebereich2 = wertebereich2;
-		this.schrittweite = schrittweite;
+	public Horner(Polynom polynom){
+		
 		this.polynom = polynom;
-	}
-	
-	public double getWertebereich1(){
-		return wertebereich1;
-	}
-	
-	public double getWertebereich2(){
-		return wertebereich2;
-	}
-	
-	public double getSchrittweite(){
-		return schrittweite;
 	}
 	
 	public Polynom getPolynom(){

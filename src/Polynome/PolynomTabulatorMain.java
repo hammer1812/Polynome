@@ -19,8 +19,8 @@ public class PolynomTabulatorMain {
 			System.out.println("Mit einer Schrittweite von: ");
 			double schrittweite = sc.nextDouble();
 			
-			Horner hn = new Horner(new Polynom(argumente), wertebereich1, wertebereich2, schrittweite);
-			PolynomTabulator polyTab = new PolynomTabulator(hn);
+			Horner hn = new Horner(new Polynom(argumente));
+			PolynomTabulator polyTab = new PolynomTabulator(hn, wertebereich1, wertebereich2, schrittweite);
 			polyTab.format();
 			
 			System.out.println("Neue Berechnung durchführen?(y/n)");
