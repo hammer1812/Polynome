@@ -17,6 +17,12 @@ public class Polynom {
 	public Polynom(double radikand, int exponent){
 		this.radikand = radikand;
 		this.exponent = exponent;
+		polynom = new double[exponent+1];
+		polynom[0] = 1;
+		for(int i = 1; i < polynom.length-1;i++){
+			polynom[i] = 0;
+		}
+		polynom[exponent] = (-1)*radikand;
 	}
 	
 	public double getRadikand(){
