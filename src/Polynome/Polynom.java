@@ -1,11 +1,30 @@
 package Polynome;
-
+/**
+ * 
+ * @author Philip Förster
+ *
+ */
 public class Polynom {
-
+	/**
+	 * Polynom
+	 * 
+	 * index des Arrays entspricht dem Exponenten von x
+	 */
 	private double[] polynom;
+	/**
+	 * Radikand einer Wurzel
+	 */
 	private double radikand;
+	/**
+	 * Exponent einer Wurzel
+	 */
 	private int exponent;
-	
+	/**
+	 * Konstruktor
+	 * 
+	 * wandelt den übergebenen String in ein Polynom um und stellt Funktionalitäten bereit
+	 * @param argumente String der zu einem Polynom umgewandelt wird (1;2;3 == 1x^2 + 2x + 3)
+	 */
 	public Polynom(String argumente){
 		String[] coeffs = argumente.split(";");
 		polynom = new double[coeffs.length];
@@ -13,7 +32,13 @@ public class Polynom {
 			polynom[i] = Double.parseDouble(coeffs[i]); //wirft exception wenn Kommazahl mit "," statt "." geschrieben wird kektoni
 		}
 	}
-	
+	/**
+	 * Konstruktor
+	 * 
+	 * wandelt eine Wurzel in ein Polynom um und stellt Funktionalitäten bereit
+	 * @param radikand Radikand einer Wurzel
+	 * @param exponent Exponent einer Wurzel
+	 */
 	public Polynom(double radikand, int exponent){
 		this.radikand = radikand;
 		this.exponent = exponent;
@@ -24,23 +49,25 @@ public class Polynom {
 		}
 		polynom[exponent] = (-1)*radikand;
 	}
-	
-	public double getRadikand(){
-		return radikand;
-	}
-	
-	public int getExponent(){
-		return exponent;
-	}
-	
+	/**
+	 * getter für einen Koeffizienten am Index des Polynoms
+	 * @param index Position des Koeffizienten
+	 * @return ein Koeffizient des Polynoms
+	 */
 	public double get(int index){
 		return polynom[index];
 	}
-	
+	/**
+	 * getter für Groesse des Polynoms
+	 * @return Groesse des Polynoms
+	 */
 	public int size(){
 		return polynom.length;
 	}
-	
+	/**
+	 * formatiert das Polynom um es als String darzustellen
+	 * @return Polynom als String
+	 */
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		for(int i=0; i<polynom.length;i++){

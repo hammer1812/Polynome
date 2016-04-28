@@ -1,12 +1,17 @@
 package Polynome;
 
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Philip Förster
+ *
+ */
 public class PolynomTabulatorMain {
-
+	/**
+	 * Testprogramm um Polynome zu berechnen und als Tabelle darzustellen, mit Nutzerabfrage
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		//Polynom poly = new Polynom("-1,-1,5.6,700,1,2");
-		//System.out.println(poly.toString());
 		boolean exec = true;
 		Scanner sc = new Scanner(System.in);
 		while(exec){

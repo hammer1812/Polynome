@@ -1,7 +1,7 @@
 package Polynome;
 /**
  * 
- * @author Philip
+ * @author Philip Förster
  *
  */
 public class Horner {
@@ -9,6 +9,8 @@ public class Horner {
 	private Polynom polynom;
 	/**
 	 * Konstruktor
+	 * 
+	 * stellt Berechnungen nach Horner-Schema an
 	 * @param polynom das Polynom welches berechnet wird
 	 */
 	public Horner(Polynom polynom){
