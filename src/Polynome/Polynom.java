@@ -12,14 +12,6 @@ public class Polynom {
 	 */
 	private double[] polynom;
 	/**
-	 * Radikand einer Wurzel
-	 */
-	private double radikand;
-	/**
-	 * Exponent einer Wurzel
-	 */
-	private int exponent;
-	/**
 	 * Konstruktor
 	 * 
 	 * wandelt den übergebenen String in ein Polynom um und stellt Funktionalitäten bereit
@@ -40,8 +32,6 @@ public class Polynom {
 	 * @param exponent Exponent einer Wurzel
 	 */
 	public Polynom(double radikand, int exponent){
-		this.radikand = radikand;
-		this.exponent = exponent;
 		polynom = new double[exponent+1];
 		polynom[0] = 1;
 		for(int i = 1; i < polynom.length-1;i++){

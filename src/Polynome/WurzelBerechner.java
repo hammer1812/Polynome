@@ -1,12 +1,21 @@
 package Polynome;
-
+/**
+ * 
+ * @author Adrian Fietta
+ *
+ */
 import java.util.Scanner;
 
 public class WurzelBerechner {
-
+/**
+ * Mainmethode zur Berechnung von Wurzeln
+ * @param args
+ */
 	public static void main(String[] args) {
+		
 		boolean exec = true;
 		Scanner sc = new Scanner(System.in);
+		
 		while(exec){
 			System.out.println("Geben sie den Radikand der Wurzel ein: ");
 			double radikand = sc.nextDouble();

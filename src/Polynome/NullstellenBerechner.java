@@ -1,9 +1,16 @@
 package Polynome;
-
+/**
+ * 
+ * @author Adrian Fietta
+ *
+ */
 import java.util.Scanner;
 
 public class NullstellenBerechner {
-
+	/**
+	 * Testprogramm zur Berechnung von Nullstellen eines beliebigen Polynoms
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		boolean exec = true;
 		while(exec){
