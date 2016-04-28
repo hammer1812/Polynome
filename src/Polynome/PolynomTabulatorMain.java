@@ -11,7 +11,7 @@ public class PolynomTabulatorMain {
 		Scanner sc = new Scanner(System.in);
 		while(exec){
 			System.out.println("Geben sie die Koeffizienten eines Polynoms ein (getrennt durch Semikolon: \"a;b;c\"):");
-			String argumente = sc.nextLine();
+			String argumente = sc.next();
 			System.out.println("Rechne mit Werten von: ");
 			double wertebereich1 = sc.nextDouble();
 			System.out.println("bis: ");

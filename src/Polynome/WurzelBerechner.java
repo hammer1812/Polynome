@@ -17,7 +17,7 @@ public class WurzelBerechner {
 			Horner hn = new Horner(polynom);
 			Newton wurzel = new Newton(hn, 4, radikand, 100);
 			
-			System.out.println(String.format("Die Wurzelnaeherung betraegt: %f", wurzel.getNullstelle()));
+			System.out.println("Die Wurzelnaeherung betraegt: " + wurzel.getNullstelle());
 			
 			System.out.println("Neue Berechnung durchführen?(y/n)");
 			if(sc.next().charAt(0) == 'y')

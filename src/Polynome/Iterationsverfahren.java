@@ -6,10 +6,10 @@ public abstract class Iterationsverfahren {
 	protected int genauigkeit;
 	protected double nullstelle;
 	protected int maxIterationen;
-
-	public String toString(){
-		String s = "";
-		return s;
+	protected double epsilon = Math.pow(10, (-1)*genauigkeit);
+	
+	public int getAnzahlIterationen(){
+		return anzahlIterationen;
 	}
 	
 	public double getNullstelle(){

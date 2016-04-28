@@ -6,9 +6,13 @@ public class Newton extends Iterationsverfahren{
 		this.genauigkeit = genauigkeit;
 		this.maxIterationen = maxIterationen;
 		nullstelle = anfangsnaeherung;
-		for(int i = 0; i < maxIterationen; i++){
+		anzahlIterationen = 0;
+		while(Math.abs(hn.getFunktionswert(nullstelle))>=epsilon && anzahlIterationen < maxIterationen){
 			nullstelle = nullstelle - hn.getFunktionswert(nullstelle)/hn.getErsteAbleitungwert(nullstelle);
+			anzahlIterationen++;
 		}
+		//nullstelle = nullstelle - hn.getFunktionswert(nullstelle)/hn.getErsteAbleitungwert(nullstelle);
+		
 	}
 	
 }
